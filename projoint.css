@@ -1,0 +1,838 @@
+/* Styles généraux du corps de la page */
+body {
+    margin: 0;
+    padding: 0; /* Assure qu'il n'y a pas de padding par défaut */
+    font-family: Arial, sans-serif;
+    color: #333; /* Couleur de texte par défaut pour le corps */
+    direction: ltr; /* Direction par défaut de gauche à droite pour le texte */
+}
+
+/* En-tête principal */
+.main-header {
+    background-color: #021091d2; /* Couleur de fond sombre */
+    color: white;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+    position: relative;
+    font-size: 0.9em;
+}
+
+/* Contenu de gauche de l'en-tête (slogan - non utilisé actuellement dans le HTML fourni) */
+.header-left-content {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.slogan {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #02030fd2; /* Couleur pour le slogan */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation de l'en-tête */
+.header-nav {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-nav li {
+    margin: 0 15px;
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+}
+
+.header-nav a:hover {
+    color: #000000d2; /* Couleur au survol */
+}
+
+/* Contenu de droite de l'en-tête (logo) */
+.header-right-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end; /* Aligne les éléments à droite */
+}
+
+/* Icône de recherche (non utilisée actuellement dans le HTML fourni) */
+.search-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 25px;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: #021091d2;
+}
+
+/* Logo principal */
+.logo-main img {
+    height: 40px;
+    width: auto;
+    margin-left: 25px;
+    display: block;
+}
+
+/* Sélecteur de langue (non utilisé actuellement dans le HTML fourni) */
+.language-selector {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 25px;
+    padding: 5px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.language-selector:hover {
+    border-color: #021091d2;
+}
+
+.language-selector span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.language-selector .fas.fa-caret-down {
+    font-size: 0.8em;
+}
+
+/* Section Héro (zone principale avec image de fond) */
+.main-content-area {
+    position: relative;
+    width: 100vw; /* Pleine largeur de la vue */
+    height: 100vh; /* Pleine hauteur de la vue */
+    padding-top: 70px; /* Décalage pour l'en-tête fixe */
+    box-sizing: border-box; /* Inclut le padding dans la hauteur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement le contenu */
+    align-items: center; /* Centre horizontalement le contenu */
+    text-align: center;
+    color: white;
+    background-image: url('joint.jpg'); /* Image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* Sous le contenu et l'overlay */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay sombre pour la lisibilité */
+    z-index: 2; /* Au-dessus de l'image, sous le contenu */
+}
+
+.hero-inner-content {
+    position: relative;
+    z-index: 3; /* Assure que le contenu est au-dessus de l'overlay */
+    max-width: 900px;
+    padding: 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vh - 70px); /* Remplit la hauteur restante, ajusté pour l'en-tête */
+}
+
+.hero-main-title {
+    font-size: 3.5em;
+    margin-top: auto; /* Pousse le titre vers le haut */
+    margin-bottom: auto;
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre pour une meilleure lisibilité */
+}
+
+/* Boîtes d'icônes au bas de la section principale */
+.hero-icon-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: auto; /* Pousse les icônes vers le bas */
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.icon-box-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-box-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.icon-box-item i {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.icon-box-item p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Barre latérale des réseaux sociaux */
+.social-sidebar-main {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1002; /* S'assure qu'elle est au-dessus de tout */
+    color: white;
+}
+
+.social-sidebar-main .social-icon {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.social-sidebar-main .social-icon:hover {
+    color: white;
+}
+
+/* --- Styles du Carrousel de Produits --- */
+.products-carousel-section {
+    background-color: #f8f8f8; /* Fond clair pour la section du carrousel */
+    padding: 60px 0;
+    text-align: center;
+    color: #333;
+}
+
+.products-carousel-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: #021091d2; /* Couleur correspondant à l'en-tête */
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.product-carousel {
+    display: flex;
+    overflow-x: scroll; /* Permet le défilement horizontal */
+    scroll-behavior: smooth; /* Défilement fluide */
+    -webkit-overflow-scrolling: touch; /* Améliore le défilement tactile */
+    gap: 30px; /* Espacement entre les cartes de produits */
+    padding: 20px 0;
+    flex-grow: 1;
+
+    /* Masque la barre de défilement par défaut */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE et Edge */
+}
+
+.product-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.product-card {
+    flex: 0 0 auto; /* Empêche les cartes de se réduire ou de s'étirer */
+    width: 280px; /* Largeur fixe pour chaque carte */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    font-size: 1.4em;
+    margin: 15px 10px 10px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin: 0 10px 15px;
+    line-height: 1.5;
+}
+
+.product-card .btn-details {
+    display: inline-block;
+    background-color: #021091d2;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .btn-details:hover {
+    background-color: #000000d2;
+}
+
+.left-arrow, .right-arrow {
+    background-color: #021091d2;
+    color: white;
+    border: none;
+    padding: 15px 18px;
+    border-radius: 50%; /* Boutons circulaires */
+    cursor: pointer;
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.left-arrow {
+    left: -25px; /* Positionne légèrement à l'extérieur */
+}
+
+.right-arrow {
+    right: -25px; /* Positionne légèrement à l'extérieur */
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    background-color: #000000d2;
+    transform: translateY(-50%) scale(1.05); /* Effet de léger agrandissement */
+}
+
+/* --- Styles Responsives --- */
+
+@media (max-width: 1024px) {
+    .main-header {
+        padding: 10px 20px;
+        flex-wrap: wrap; /* Permet aux éléments de l'en-tête de s'enrouler */
+    }
+
+    .header-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .header-nav li {
+        margin: 5px 10px;
+    }
+
+    .header-left-content,
+    .header-right-content {
+        flex-basis: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-left-content {
+        margin-bottom: 10px;
+    }
+
+    .logo-main img {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .search-icon, .language-selector {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .carousel-container {
+        width: 95%; /* Augmente la largeur du carrousel sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Empile les éléments verticalement */
+        align-items: center;
+        padding: 15px 10px;
+    }
+
+    .header-left-content {
+        order: 1;
+        margin-bottom: 15px;
+    }
+
+    .header-nav {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-nav li {
+        margin: 5px 0;
+    }
+
+    .header-right-content {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .main-content-area {
+        padding: 60px 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-main-title {
+        font-size: 2em;
+    }
+
+    .products-carousel-section {
+        padding: 40px 0;
+    }
+    .products-carousel-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .product-card {
+        width: 250px; /* Réduit la largeur des cartes */
+    }
+    .left-arrow, .right-arrow {
+        font-size: 1.2em;
+        padding: 10px 12px;
+        left: 5px; /* Rapproche les flèches du bord */
+        right: 5px;
+    }
+    .carousel-container {
+        width: 98%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 10px;
+    }
+
+    .slogan {
+        font-size: 1em;
+    }
+
+    .header-nav a {
+        font-size: 0.9em;
+    }
+
+    .logo-main img {
+        height: 35px;
+    }
+
+    .search-icon {
+        font-size: 1.1em;
+    }
+
+    .main-content-area {
+        padding: 40px 15px;
+    }
+
+    .hero-main-title {
+        font-size: 1.8em;
+    }
+
+    .product-card {
+        width: 220px; /* Réduit la largeur des cartes davantage */
+    }
+    .left-arrow, .right-arrow {
+        padding: 8px 10px;
+        font-size: 1em;
+        /* display: none;  Décommenter pour masquer les flèches sur mobile */
+    }
+    .carousel-container {
+        padding: 0 10px; /* Ajoute un padding latéral sur mobile */
+    }
+}
+/* أنماط عامة للقسم */
+.our-work-section {
+    padding: 60px 0; /* مسافة داخلية علوية وسفلية */
+    background-color: #f9f9f9; /* لون خلفية خفيف */
+    text-align: center; /* توسيط النصوص */
+}
+
+.our-work-section .container {
+    max-width: 1200px; /* أقصى عرض للمحتوى */
+    margin: 0 auto; /* توسيط الـ container */
+    padding: 0 20px; /* مسافة داخلية على الجانبين */
+}
+
+.our-work-section h2 {
+    font-size: 2.5em; /* حجم العنوان */
+    color: #333; /* لون العنوان */
+    margin-bottom: 40px; /* مسافة سفلية بعد العنوان */
+    position: relative;
+    display: inline-block; /* ليتأثر بالـ margin auto لو أردنا */
+}
+
+.our-work-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background-color: #007bff; /* خط تحت العنوان */
+    border-radius: 2px;
+}
+
+/* أنماط معرض الأعمال (الـ gallery) */
+.work-gallery {
+    display: grid; /* استخدام نظام الشبكة لترتيب البطاقات */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 أعمدة على الأقل، تتكيف مع الشاشة */
+    gap: 30px; /* المسافة بين البطاقات */
+    justify-content: center; /* توسيط البطاقات إذا كانت أقل من عدد الأعمدة الكامل */
+}
+
+/* أنماط بطاقة المشروع الواحدة */
+.work-card {
+    background-color: #fff; /* خلفية بيضاء للبطاقة */
+    border-radius: 8px; /* حواف مستديرة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف للبطاقة */
+    overflow: hidden; /* لإخفاء أي جزء زائد من الصورة */
+    text-align: left; /* محاذاة النصوص داخل البطاقة لليسار */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير الانتقال عند التحويم */
+}
+
+.work-card:hover {
+    transform: translateY(-5px); /* رفع البطاقة قليلاً عند التحويم */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* زيادة الظل عند التحويم */
+}
+
+.work-card img {
+    width: 100%; /* عرض الصورة 100% من البطاقة */
+    height: 200px; /* ارتفاع ثابت للصورة */
+    object-fit: cover; /* لضمان تغطية الصورة للمساحة دون تشوه */
+    border-bottom: 1px solid #eee; /* خط فاصل تحت الصورة */
+}
+
+.work-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 15px 15px 10px; /* مسافات داخلية */
+}
+
+.work-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin: 0 15px 20px; /* مسافات داخلية */
+    line-height: 1.6; /* تباعد الأسطر */
+}
+
+/* أنماط زر "عرض المشروع" */
+.work-card .view-project-btn {
+    display: inline-block; /* لعرض الزر ككتلة قابلة للتصميم */
+    background-color: #007bff; /* لون خلفية الزر */
+    color: #fff; /* لون نص الزر */
+    text-decoration: none; /* إزالة الخط تحت الرابط */
+    padding: 10px 20px; /* مسافة داخلية للزر */
+    border-radius: 5px; /* حواف مستديرة للزر */
+    margin-bottom: 20px; /* مسافة سفلية */
+    transition: background-color 0.3s ease; /* تأثير الانتقال للون الخلفية */
+}
+
+.work-card .view-project-btn:hover {
+    background-color: #0056b3; /* لون أغمق عند التحويم */
+}
+/* ========================================= */
+/* أنماط الأزرار الرئيسية (كما في الصورة - لا تغيير هنا) */
+/* ========================================= */
+.action-buttons-container {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.action-btn {
+    padding: 12px 25px;
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.action-btn.red-btn {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #dc3545;
+}
+
+.action-btn.red-btn:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.action-btn.outline-btn {
+    background-color: white;
+    color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+.action-btn.outline-btn:hover {
+    background-color: #e9ecef;
+    color: #495057;
+    border-color: #495057;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+
+/* ========================================= */
+/* أنماط النافذة المنبثقة (Modal) - تصميم عصري ومغاير */
+/* ========================================= */
+.modern-custom-modal {
+    display: none; /* مخفية افتراضياً */
+    position: fixed;
+    z-index: 1000; /* لتظهر فوق كل شيء آخر */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.75); /* خلفية معتمة أكثر */
+    display: flex;
+    align-items: center; /* توسيط عمودي */
+    justify-content: center; /* توسيط أفقي */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-out; /* حركة إظهار بطيئة وأكثر سلاسة */
+}
+
+.modern-custom-modal.is-visible-custom { /* هذا الكلاس سيضاف بواسطة JavaScript لإظهارها */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modern-custom-modal-content {
+    background-color: #ffffff; /* خلفية بيضاء نقية */
+    border-radius: 18px; /* حواف مستديرة جداً */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* ظل عميق وواضح */
+    position: relative;
+    width: 90%;
+    max-width: 600px; /* عرض أكبر قليلاً للنافذة */
+    padding: 40px 50px; /* مسافة داخلية أكبر */
+    transform: scale(0.8); /* تبدأ بحجم أصغر */
+    opacity: 0;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* حركة ظهور وتكبير */
+    box-sizing: border-box;
+}
+
+.modern-custom-modal.is-visible-custom .modern-custom-modal-content {
+    transform: scale(1); /* تصل إلى حجمها الطبيعي */
+    opacity: 1;
+}
+
+/* زر الإغلاق (X) - تصميم عصري */
+.close-btn-custom {
+    color: #a0a0a0; /* لون رمادي فاتح وأنيق */
+    font-size: 38px; /* حجم أكبر جداً */
+    font-weight: 200; /* خط رفيع */
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.close-btn-custom:hover {
+    color: #666666; /* تصبح أغمق قليلاً عند التحويم */
+}
+
+/* عنوان النافذة */
+.modal-title-custom {
+    text-align: center; /* توسيط العنوان */
+    color: #2c3e50; /* لون أزرق داكن/أسود للحصول على تباين عالٍ */
+    font-size: 2.8em; /* حجم العنوان أكبر وأكثر بروزاً */
+    margin-bottom: 25px;
+    font-weight: 700; /* خط سميك */
+    letter-spacing: -0.5px; /* تقليل المسافة بين الحروف */
+}
+
+/* أنماط النموذج داخل النافذة */
+.modal-form-custom .form-group-custom {
+    margin-bottom: 25px; /* مسافة أكبر بين الحقول */
+}
+
+.modal-form-custom label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600; /* خط أثقل قليلاً */
+    color: #34495e; /* لون أزرق رمادي للنص */
+    font-size: 1.05em;
+}
+
+/* حقول الإدخال والنص - تصميم عصري */
+.modal-form-custom input[type="text"],
+.modal-form-custom input[type="tel"],
+.modal-form-custom textarea {
+    width: 100%;
+    padding: 15px 20px; /* مسافة داخلية أكبر للحقول */
+    border: 1px solid #e0e0e0; /* حدود فاتحة جداً */
+    border-radius: 10px; /* حواف مستديرة أكثر */
+    font-size: 1.05em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9; /* خلفية خفيفة للحقول */
+    color: #333;
+}
+
+.modal-form-custom input:focus,
+.modal-form-custom textarea:focus {
+    border-color: #007bff; /* حدود زرقاء عند التركيز */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25); /* ظل تركيز أكبر */
+    outline: none;
+    background-color: #ffffff; /* خلفية بيضاء عند التركيز */
+}
+
+.modal-form-custom textarea {
+    min-height: 140px; /* ارتفاع أدنى أكبر لحقل الرسالة */
+    resize: vertical;
+}
+
+/* علامة النجمة للحقول المطلوبة */
+.required-star-custom {
+    color: #e74c3c; /* لون أحمر زاهي */
+    margin-left: 5px;
+    font-size: 0.9em;
+}
+
+/* رسالة التحقق "Veuillez renseigner ce champ." */
+.validation-message-custom {
+    color: #e74c3c;
+    font-size: 0.88em;
+    margin-top: 8px;
+    display: none;
+    font-weight: 500;
+}
+
+/* زر الإرسال "Envoyer" - تصميم عصري */
+.submit-btn-custom {
+    display: block;
+    width: 100%;
+    padding: 16px 25px; /* مسافة داخلية أكبر للزر */
+    background-color: #2ecc71; /* لون أخضر جميل */
+    color: white;
+    border: none;
+    border-radius: 10px; /* حواف مستديرة أكثر */
+    font-size: 1.3em; /* حجم خط أكبر للزر */
+    font-weight: 700; /* خط سميك جداً */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 30px; /* مسافة علوية أكبر */
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4); /* ظل أخضر مميز */
+}
+
+.submit-btn-custom:hover {
+    background-color: #27ae60; /* أخضر أغمق عند التحويم */
+    transform: translateY(-3px); /* رفع الزر قليلاً */
+    box-shadow: 0 12px 25px rgba(46, 204, 113, 0.5);
+}
+/* ========================================= */
+/* Styles du nouveau pied de page (informations de l'entreprise) */
+/* ========================================= */
+.company-info-footer {
+    background-color: #343a40; /* Couleur de fond sombre pour le pied de page */
+    color: #f8f9fa; /* Couleur de texte claire */
+    padding: 40px 0; /* Espacement interne */
+    text-align: center; /* Centrage du texte */
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+.company-info-footer .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.company-info-footer p {
+    margin-bottom: 10px;
+}
+
+.company-info-footer a {
+    color: #007bff; /* Couleur bleue pour les liens */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    transition: color 0.3s ease;
+}
+
+.company-info-footer a:hover {
+    color: #66b3ff; /* Couleur plus claire au survol */
+    text-decoration: underline; /* Ajoute un soulignement au survol */
+}
